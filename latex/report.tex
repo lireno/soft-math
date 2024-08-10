@@ -1,0 +1,108 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{cite}
+\geometry{a4paper, margin=1in}
+\usepackage{xeCJK}
+\setmainfont{WenQuanYi Zen Hei}
+\title{一阶微分方程的解法探讨}
+\author{您的姓名}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+本文探讨了一阶微分方程的常用解法，主要集中于可分离变量方程和线性微分方程。这些方程的解法是微分方程研究的基础，并在科学与工程的诸多领域中有着广泛的应用。
+\end{abstract}
+
+\section{引言}
+
+一阶微分方程是最简单的微分方程类型之一，但对于理解更复杂的系统至关重要。这类方程通常涉及一个函数及其一阶导数，形式为：
+\begin{equation}
+\frac{dy}{dx} = f(x, y)
+\end{equation}
+其中 \( f(x, y) \) 是给定的函数。本文将讨论两种常见的解法：分离变量法和积分因子法。
+
+\section{可分离变量的微分方程}
+
+如果一个微分方程可以写成如下形式：
+\begin{equation}
+\frac{dy}{dx} = g(x)h(y)
+\end{equation}
+其中 \( g(x) \) 和 \( h(y) \) 分别是 \( x \) 和 \( y \) 的函数，则称该方程是可分离的。通过重新排列并积分，可以得到解：
+\begin{equation}
+\frac{1}{h(y)} dy = g(x) dx
+\end{equation}
+
+\subsection{示例}
+
+考虑方程：
+\begin{equation}
+\frac{dy}{dx} = xy
+\end{equation}
+该方程是可分离的，可以改写为：
+\begin{equation}
+\frac{1}{y} dy = x dx
+\end{equation}
+对两边积分得到：
+\begin{equation}
+\ln|y| = \frac{x^2}{2} + C
+\end{equation}
+两边取指数，得到通解：
+\begin{equation}
+y = C'e^{\frac{x^2}{2}}
+\end{equation}
+其中 \( C' = e^C \) 是一个任意常数。
+
+\section{线性微分方程}
+
+一阶线性微分方程的通式为：
+\begin{equation}
+\frac{dy}{dx} + P(x)y = Q(x)
+\end{equation}
+解此类方程的标准方法是找到一个积分因子 \( \mu(x) \)，它由下式给出：
+\begin{equation}
+\mu(x) = e^{\int P(x) dx}
+\end{equation}
+将原方程乘以 \( \mu(x) \)，左边可以写成一个积的导数形式。
+
+\subsection{示例}
+
+考虑线性方程：
+\begin{equation}
+\frac{dy}{dx} + 2y = x
+\end{equation}
+其积分因子为：
+\begin{equation}
+\mu(x) = e^{\int 2 dx} = e^{2x}
+\end{equation}
+将方程两边乘以 \( e^{2x} \)，得到：
+\begin{equation}
+e^{2x} \frac{dy}{dx} + 2e^{2x}y = xe^{2x}
+\end{equation}
+左边是 \( y e^{2x} \) 的导数形式，积分两边得到：
+\begin{equation}
+y e^{2x} = \int xe^{2x} dx
+\end{equation}
+然后可以通过分部积分法求解。
+
+\section{结论}
+
+本文回顾了两种解一阶微分方程的基本方法：分离变量法和积分因子法。这些方法是解微分方程的基础，在科学和工程的诸多问题中具有广泛的应用。
+
+\begin{thebibliography}{9}
+
+\bibitem{ODE}
+Dennis G. Zill. \textit{A First Course in Differential Equations with Modeling Applications}. Cengage Learning, 2017.
+
+\bibitem{LinearODE}
+William E. Boyce and Richard C. DiPrima. \textit{Elementary Differential Equations and Boundary Value Problems}. Wiley, 2012.
+
+\bibitem{MathMethods}
+George B. Arfken, Hans J. Weber, and Frank E. Harris. \textit{Mathematical Methods for Physicists}. Academic Press, 2012.
+
+\end{thebibliography}
+
+\end{document}
